@@ -1,11 +1,12 @@
 import { Router } from "express";
-import Controller from "../controllers/Controller.js";
+import inputValidates from "../utils/inputValidates.js";
+import controller from "../container/container.js";
 
 
-const controller = new Controller();
 const routes = Router();
 
 routes.get("/",controller.getAll)
-routes.post("/",controller.create)
+
+routes.post("/",inputValidates,controller.create)
 
 export default routes

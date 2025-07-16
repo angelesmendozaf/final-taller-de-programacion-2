@@ -1,9 +1,8 @@
 
-import Service from "../service/Service.js"
 class Controller{
-
-service = new Service();
-
+    constructor(service) {
+    this.service =service;
+  }
     
     getAll = async (req,res)=>{
         try{

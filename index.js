@@ -11,6 +11,9 @@ app.use(express.urlencoded({extended:true}))
 
 app.use("/app",routes)
 
+app.use((req,res,next)=>{
+    res.status(400).send("bad request")
+})
 
 //levanto el servidor
 app.listen(8080, ()=> {
